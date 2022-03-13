@@ -1,12 +1,11 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { TransitionArray } from './components';
 import Button from '@mui/material/Button';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { keyframes } from '@mui/system';
-
+import Typewriter from 'typewriter-effect';
 
 const kevinArray = [
   {
@@ -57,6 +56,8 @@ const ngoArray = [
 const centerDiv = { width: '100%', display: 'flex', justifyContent: 'center' };
 
 const App = () => {
+  const [show, setShow] = React.useState(false);
+
   return (
     <Container>
       {/* Title animation */}
@@ -78,7 +79,7 @@ const App = () => {
         {/* Space separator */}
         <Box sx={{ color: '#1B9AAA', display: 'flex-item' }}>
           &nbsp;
-          </Box>
+        </Box>
 
         {/* <Box sx={{ height: 0, flexBasis: '100%', display: 'flex-item' }} /> */}
 
@@ -89,37 +90,50 @@ const App = () => {
       </Box>
 
       {/* "Coming soon" */}
-      <Box sx={{ ...centerDiv }}>
-        <Box className="typewriter py-0" sx={{
-          color: '#F4FFFD',
-          fontSize: {
-            lg: 100,
-            md: 100,
-            sm: 90,
-            xs: 50
-          }
-        }}>
-          <span className="typewriter-text">Makeover incoming</span>
+      <Box sx={{
+        ...centerDiv, color: '#F4FFFD', textAlign: 'center',
+        fontSize: {
+          lg: 100,
+          md: 100,
+          sm: 90,
+          xs: 50
+        }
+      }}>
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter.typeString('Makeover incoming')
+              .callFunction(() => {
+                console.log('String typed out!');
+              })
+              // .pauseFor(2500)
+              // .deleteAll()
+              .callFunction(() => {
+                console.log('All strings were deleted');
+                setShow(true);
+              })
+              .start();
+          }}
+        />
+      </Box>
+      {show &&
+        <Box sx={{ ...centerDiv, mt: 3 }}>
+          <Button href="https://kevinngo.tech" target="_blank" variant="contained" endIcon={<OpenInNewIcon />}
+            sx={{
+              fontSize: {
+                lg: 30,
+                md: 30,
+                sm: 30,
+                xs: 30
+              },
+              bgcolor: '#EF476F',
+              '&:hover': {
+                bgcolor: '#CF476F'
+              }
+            }}>
+            Current Website
+          </Button>
         </Box>
-      </Box>
-
-      <Box sx={{ ...centerDiv }}>
-        <Button href="https://kevinngo.tech" target="_blank" variant="contained" endIcon={<OpenInNewIcon />}
-          sx={{
-            fontSize: {
-              lg: 30,
-              md: 30,
-              sm: 30,
-              xs: 30
-            },
-            bgcolor: '#EF476F',
-            '&:hover': {
-              bgcolor: '#CF476F'
-            }
-          }}>
-          Current Website
-      </Button>
-      </Box>
+      }
     </Container>
   );
 }
