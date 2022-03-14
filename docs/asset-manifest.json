@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://kngo5553.github.io/website-v4/static/css/main.393a2014.css",
-    "main.js": "https://kngo5553.github.io/website-v4/static/js/main.3b7452a7.js",
+    "main.js": "https://kngo5553.github.io/website-v4/static/js/main.c57dfa8c.js",
     "static/js/787.1301a7f4.chunk.js": "https://kngo5553.github.io/website-v4/static/js/787.1301a7f4.chunk.js",
     "index.html": "https://kngo5553.github.io/website-v4/index.html",
     "main.393a2014.css.map": "https://kngo5553.github.io/website-v4/static/css/main.393a2014.css.map",
-    "main.3b7452a7.js.map": "https://kngo5553.github.io/website-v4/static/js/main.3b7452a7.js.map",
+    "main.c57dfa8c.js.map": "https://kngo5553.github.io/website-v4/static/js/main.c57dfa8c.js.map",
     "787.1301a7f4.chunk.js.map": "https://kngo5553.github.io/website-v4/static/js/787.1301a7f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.393a2014.css",
-    "static/js/main.3b7452a7.js"
+    "static/js/main.c57dfa8c.js"
   ]
 }

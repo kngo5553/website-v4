@@ -78,11 +78,11 @@ const InfoTree = ({ aniRef }) => {
             <Tree name="experience">
                 <Tree name="service nsw" style={{ ...blue }}>
                     <Box sx={{ p: 1 }}>
-                        Service NSW is a cutting edge government agency adopting the latest industry trends to deliver an amazing and consistent UX to millions of NSW citizens everyday.
-                        I was a part of the Crisis Response team responsible for rapid delivering solutions to crises such as COVID-19, bushfires, and floodings. My projects have numbered above a dozen and affected million of users.
+                        Service NSW is a cutting edge government agency adopting the latest industry trends to deliver an <strong style={{...orange}}>amazing and consistent UX to millions of NSW citizens</strong> everyday.
+                        My team, Crisis Response, was responsible for rapid delivering solutions to crises such as COVID-19, bushfires, and floodings. My projects have numbered above a dozen and impacted millions of users.
                         <p>
-                            It was during this trial by fire that I matured as a software engineer.
-                            My work provided exposure to diverse technologies across multiple disciplines, opportunities to mentor junior engineers, become a subject matter expert, and win awards.
+                            <strong style={{...red}}>This trial by fire matured me immensely as a software engineer. </strong>
+                            My projects provided exposure to diverse technologies across multiple disciplines, opportunities to mentor junior engineers, become a subject matter expert, and even win awards.
                         </p>
                         Please explore my experience and achievements below!
                     </Box>
