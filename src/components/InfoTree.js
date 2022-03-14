@@ -131,7 +131,7 @@ const InfoTree = ({ aniRef }) => {
                 </Tree>
             </Tree>
 
-            <Tree name="example">
+            {/* <Tree name="example">
                 <Tree name="testing" />
                 <Tree name="subtree with children">
                     <Tree name="hello" />
@@ -152,7 +152,7 @@ const InfoTree = ({ aniRef }) => {
                 </Tree>
                 <Tree name="world" />
                 <Tree name={<span>🙀 something something</span>} />
-            </Tree>
+            </Tree> */}
         </animated.div >
     )
 }

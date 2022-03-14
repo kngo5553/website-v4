@@ -77,7 +77,7 @@ const App = () => {
   const infoRef = useSpringRef();
 
   // First run the spring, when it concludes run the transition
-  useChain([kevinRef, infoRef], [0, 1]);
+  useChain([kevinRef, infoRef], [0, 1.3]);
 
   return (
       <Container maxWidth='2400px' sx={{mb: 5}}>
