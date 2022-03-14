@@ -80,7 +80,6 @@ const App = () => {
   useChain([kevinRef, infoRef], [0, 1]);
 
   return (
-    <>
       <Container maxWidth='2400px' sx={{mb: 5}}>
         {/* Title animation */}
         <Box sx={{
@@ -124,9 +123,7 @@ const App = () => {
 
         <InfoTree aniRef={infoRef} />
 
-      </Container>
-
-      {showFooter &&
+        {showFooter &&
         <footer style={{ color: "gray", position: "fixed", bottom: 0, right: 0, marginRight: '1rem', marginTop: '5px' }}>
           <Card variant="outlined" sx={{ bgcolor: '#1e1e24', color: '#F4FFFD' }}>
 
@@ -147,7 +144,7 @@ const App = () => {
           </Card>
         </footer>
       }
-    </>
+      </Container>
   );
 }
 
