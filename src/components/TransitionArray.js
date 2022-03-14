@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTransition, animated, config } from '@react-spring/web';
 
-const TransitionArray = ({ transitionArray }) => {
+const TransitionArray = ({ transitionArray, aniRef }) => {
   const [items, setItems] = useState(transitionArray);
 
   const transitions = useTransition(items, {
@@ -9,7 +9,11 @@ const TransitionArray = ({ transitionArray }) => {
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     delay: 200,
-    config: config.molasses,
+    config: {
+      ...config.molasses,
+      friction: 200,
+    },
+    ref: aniRef || null
     // onRest: () => setItems([]),
   });
 
