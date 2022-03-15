@@ -138,7 +138,7 @@ const App = () => {
               <Typography sx={{ fontSize: 13, mb: 2 }} gutterBottom>
                 This website is a work in progress.
             </Typography>
-              <Button href="https://kevinngo.tech" target="_blank" variant="contained" endIcon={<OpenInNewIcon />} sx={{ fontSize: 12, bgcolor: '#EF476F', '&:hover': { bgcolor: '#CF476F' } }}>
+              <Button href="https://kngo5553.github.io/websitev3deploy/" target="_blank" variant="contained" endIcon={<OpenInNewIcon />} sx={{ fontSize: 12, bgcolor: '#EF476F', '&:hover': { bgcolor: '#CF476F' } }}>
                 View old website
             </Button>
             </CardContent>
