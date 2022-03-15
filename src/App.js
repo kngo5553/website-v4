@@ -84,7 +84,8 @@ const App = () => {
         {/* Title animation */}
         <Box sx={{
           fontSize: {
-            lg: 180,
+            xl: 200,
+            lg: 170,
             md: 160,
             sm: 140,
             xs: 100

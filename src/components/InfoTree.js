@@ -71,6 +71,26 @@ const InfoTree = ({ aniRef }) => {
         }
     </>;
 
+    const generateHistory = data =>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, mb: 2 }}>
+            {data.map(i =>
+                <Box key={i.job + i.date}>
+                    <Chip
+                        label={i.job}
+                        variant="filled"
+                        sx={{ ...black, bgcolor: orange.color, fontFamily: 'Roboto Mono', fontSize: 15, fontWeight: 500, mr: 1, mb: { xs: 1, sm: 0 } }}
+                        icon={<PersonIcon style={{ ...black }} />}
+                    />
+                    <Chip
+                        label={i.date}
+                        variant="filled"
+                        sx={{ ...black, bgcolor: blue.color, fontFamily: 'Roboto Mono', fontSize: 15, fontWeight: 500, mb: { xs: 1, sm: 0 } }}
+                        icon={<DateRangeIcon style={{ ...black }} />}
+                    />
+                </Box>
+            )}
+        </Box>
+
     return (
         <animated.div style={{ ...styles }}>
             <Tree name="info" defaultOpen>
@@ -102,7 +122,7 @@ const InfoTree = ({ aniRef }) => {
             <Tree name="skills">
                 {generateSkills({
                     languages: 'JavaScript/TypeScript, HTML/CSS, Java/Kotlin, SQL, C#, Python',
-                    frameworks: 'React, Redux, React Testing Library, TestCafe, Spring Boot, Apigee, reCAPTCHA Enterprise, Phaser.io, ASP.NET, Unity, SQL Server, Electron, PostgreSQL, MongoDB',
+                    frameworks: 'React, Redux, Jest, React Testing Library, TestCafe, Spring Boot, Apigee, reCAPTCHA Enterprise, Phaser.io, ASP.NET, Unity, SQL Server, Electron, PostgreSQL, MongoDB',
                     tools: 'Git, Gitlab CI/CD, Cloud Foundry, Jira, Confluence, Miro, IntelliJ IDEA, Visual Studio Code, Maven/Gradle, SwaggerHub, Postman, Slack, Microsoft Office + Teams, Abstract',
                     other: 'Agile Development, Scrum, Kanban, Test Driven Development, Pair Programming'
                 })}
@@ -111,26 +131,18 @@ const InfoTree = ({ aniRef }) => {
             <Tree name="experience">
                 <Tree name="service nsw" style={{ ...blue }}>
                     <Box sx={{ p: 1 }}>
-                        <Chip
-                            label="SOFTWARE ENGINEER"
-                            variant="filled"
-                            sx={{ ...black, bgcolor: orange.color, fontFamily: 'Roboto Mono', fontSize: 15, fontWeight: 500, mr: 1, mb: { xs: 1, sm: 0 } }}
-                            icon={<PersonIcon style={{ ...black }} />}
-                        />
-                        <Chip
-                            label="DEC 2020 - PRESENT"
-                            variant="filled"
-                            sx={{ ...black, bgcolor: blue.color, fontFamily: 'Roboto Mono', fontSize: 15, fontWeight: 500, mb: { xs: 1, sm: 0 } }}
-                            icon={<DateRangeIcon style={{ ...black }} />}
-                        />
+                        {generateHistory([{ job: "SOFTWARE ENGINEER", date: "DEC 2020 - PRESENT" }])}
+
                         <p>
                             Service NSW is a cutting edge government agency adopting the latest industry trends to deliver an <strong style={{ ...orange }}>amazing and consistent UX to millions of NSW citizens</strong> everyday.
                             My team, Crisis Response, was responsible for rapid delivering solutions to crises such as COVID-19, bushfires, and floodings. My projects have numbered above a dozen and impacted millions of users.
                         </p>
+
                         <p>
                             <strong style={{ ...red }}>This trial by fire matured me immensely as a software engineer. </strong>
                             My projects provided exposure to diverse technologies across multiple disciplines, opportunities to mentor junior engineers, become a subject matter expert, and even win awards.
                         </p>
+
                         Please explore my experience and achievements below!
                     </Box>
 
@@ -138,7 +150,7 @@ const InfoTree = ({ aniRef }) => {
                         <Box sx={{ p: 1 }} >
                             {generateSkills({
                                 languages: 'JavaScript/TypeScript, HTML/CSS, Java/Kotlin',
-                                frameworks: 'React, Redux, React Testing Library, TestCafe, Spring Boot, Apigee, reCAPTCHA Enterprise, Splunk, New Relic, PostgreSQL, MongoDB',
+                                frameworks: 'React, Redux, Jest, React Testing Library, TestCafe, Spring Boot, Apigee, reCAPTCHA Enterprise, Splunk, New Relic, PostgreSQL, MongoDB',
                                 tools: 'Git, Gitlab CI/CD, Cloud Foundry, Jira, Confluence, Miro, IntelliJ IDEA, Visual Studio Code, SwaggerHub, Postman, Slack, Microsoft Office + Teams, Abstract',
                                 other: 'Agile Development, Scrum, Test Driven Development, Pair Programming'
                             })}
@@ -146,8 +158,8 @@ const InfoTree = ({ aniRef }) => {
                     </Tree>
 
                     <Tree name="awards" style={{ ...yellow }}>
-                        <Box sx={{ p: 0.5 }}>
-                            <ul>
+                        <Box sx={{ p: 1 }}>
+                            <ul style={{ marginTop: '0', marginBottom: '0' }}>
                                 <li><strong style={orange}>Winner</strong> for project team - Make It Happen – Team award for Covid Safe Check in</li>
                                 <li><strong style={orange}>Winner</strong> for COVID Safe Check-in project - Secretary's Award in the category of Excellence in Digital Innovation</li>
                                 <li><strong style={blue}>Finalist</strong> for COVID Safe Check-in project - Secretary's Award in the category of Excellence in Customer Innovation Award</li>
@@ -157,61 +169,82 @@ const InfoTree = ({ aniRef }) => {
                         </Box>
                     </Tree>
 
+                    <Tree name="projects" style={{ ...yellow }}>
+                        <Box sx={{ p: 1 }}>
+                            <strong style={{ ...orange }}>COVID-19</strong>
+                            <ul style={{ marginTop: '0.25rem' }}>
+                                <li>COVID-19 Check-in - Statewide</li>
+                                <li>COVID-19 Check-in - Schools</li>
+                                <li>COVID-19 QR Check-in</li>
+                                <li>COVID-19 Check-in Card - Generating a physical card with QR code containing profile data</li>
+                                <li>COVID-19 Spotcheck - Internal app to COVID-19 query check-in for contact tracers</li>
+                                <li>Register Positive Rapid Antigen Test Result</li>
+                                <li>COVID-19 Grant Fraud Form - Reporting form for COVID-19 grant abuse</li>
+                            </ul>
+
+                            <strong style={{ ...blue }}>Other disasters</strong>
+                            <ul style={{ marginTop: '0.25rem' }}>
+                                <li>Disaster and Assistance Finder - Bushfires, floods, and COVID-19</li>
+                                <li>Agnostic Assistance Finder</li>
+                                <li>SES Request for Assistance - Flooding assistance and grocery deliveries by the SES</li>
+                                <li>Cost of Living Form - A savings finder</li>
+                            </ul>
+
+                            <strong style={{ ...red }}>Travel</strong>
+                            <ul style={{ marginTop: '0.25rem' }}>
+                                <li>Border Declaration - All states</li>
+                                <li>Border Declaration - New Zealand</li>
+                                <li>Generic Border Declaration</li>
+                                <li>Travel Permit - All states</li>
+                            </ul>
+                        </Box>
+                    </Tree>
+
                     <Tree name="more" style={{ ...yellow }}>
                         <Box sx={{ p: 1 }}>
-                            <Tree name="projects" defaultOpen style={{ ...blue }}>
-                                <Box sx={{ p: 0.5, pt: 1 }}>
-                                    <strong style={{ ...orange }}>COVID-19</strong>
-                                    <ul style={{ marginTop: '0.25rem' }}>
-                                        <li>COVID-19 Check-in - Statewide</li>
-                                        <li>COVID-19 Check-in - Schools</li>
-                                        <li>COVID-19 QR Check-in</li>
-                                        <li>COVID-19 Check-in Card - Generating a physical card with QR code containing profile data</li>
-                                        <li>COVID-19 Spotcheck - Internal app to COVID-19 query check-in for contact tracers</li>
-                                        <li>Register Positive Rapid Antigen Test Result</li>
-                                        <li>COVID-19 Grant Fraud Form - Reporting form for COVID-19 grant abuse</li>
-                                    </ul>
-
-                                    <strong style={{ ...blue }}>Other disasters</strong>
-                                    <ul style={{ marginTop: '0.25rem' }}>
-                                        <li>Disaster and Assistance Finder - Bushfires, floods, and COVID-19</li>
-                                        <li>Agnostic Assistance Finder</li>
-                                        <li>SES Request for Assistance - Flooding assistance and grocery deliveries by the SES</li>
-                                        <li>Cost of Living Form - A savings finder</li>
-                                    </ul>
-
-                                    <strong style={{ ...red }}>Travel</strong>
-                                    <ul style={{ marginTop: '0.25rem' }}>
-                                        <li>Border Declaration - All states</li>
-                                        <li>Border Declaration - New Zealand</li>
-                                        <li>Generic Border Declaration</li>
-                                        <li>Travel Permit - All states</li>
-                                    </ul>
-                                </Box>
-                            </Tree>
-
-                            {/* •	Developed on over a dozen applications using tech stack: React w/ TypeScript, Spring Boot w/ Kotlin, and Apigee.
-                            •	Engaged in agile development processes such as Scrum and pair programming.
-                            •	Won two internal team awards and finalist/nominations for several more.
-                            •	Optimised CI/CD processes including Gitlab pipelines and Cloud Foundry deployments to be over 25% faster.
-                            •	Lead the Career Advisor form which has seen over 100,000 users.
-                            •	Contributed to internal libraries and packages, such as the SNSW component library and a dynamic form generator.
-                            •	Mentored and onboarded multiple junior developers.
-                            •	Strengthened testing practices with unit and e2e integration tests using Jest, React Testing Library, and TestCafe.
-                            •	Employed Rapid Application Development in the Crisis Response Team; shipping MVPs usually in under a week.
-                            •	Became the subject-matter expert for multiple technologies including Google reCAPTCHA Enterprise.
-                            •	Enabled effective bug triages by monitoring production systems through the usage of New Relic and Splunk. */}
-
+                            to include: mentored juniors, cd/ci optimisations, contribution to ts-services, testing, rapid delivery, sme on recaptcha, etc.
                         </Box>
+                        <Tree name="images" style={{ ...green }}></Tree>
                     </Tree>
                 </Tree>
 
-                <Tree name="S.T.A.R. Maths Online" style={{ ...orange }}>
+                <Tree name="star maths online" style={{ ...orange }}>
                     <Box sx={{ p: 1 }}>
-                        DESCRIPTION
+                        {generateHistory([
+                            { job: "FULL STACK DEVELOPER", date: "AUG 2019 - SEP 2020" },
+                            { job: "GAME DEVELOPER", date: "JUL 2018 - AUG 2019" },
+                            { job: "DEVELOPER INTERN", date: "JAN 2018 - JUL 2018" },
+                        ])}
+
+                        S.T.A.R. Maths Online (SMO) is an exciting startup located in the EduTech space. It aims to provide a gamification of the learning experience aimed at grades 1 to 6.
+                        This <strong style={red}>gamification developed great user engagement and an average of 45% improvement</strong> in class results.
+
+                        <p>
+                            But that's not all. SMO also contains a powerful management and analysis system aimed at parents, teachers, and schools.
+                            Combined with an internal content authoring tool, SMO is fast, scalable, and captures the vertical EduTech market.
+                        </p>
+
+                        <p>
+                            SMO was the <strong style={orange}>start of my profession career and exposed me to industry standards across both web development and video game development.</strong>
+                            &nbsp;During my time at SMO, I was responsible for dynamic content creation, QA, user engagement features inside the game, and web development on the parent portal.
+                        </p>
+
+                        Please delve into my time at SMO in detail below!
                     </Box>
 
-                    <Tree name="images" style={{ ...yellow }}>
+                    <Tree name="technologies" style={{ ...yellow }}>
+                        <Box sx={{ p: 1 }}>
+                            LIST
+                        </Box>
+                    </Tree>
+
+                    <Tree name="achievements" style={{ ...yellow }}>
+                        <Box sx={{ p: 1 }}>
+                            LIST
+                        </Box>
+                    </Tree>
+
+                    <Tree name="more" style={{ ...yellow }}>
                         <Box sx={{ p: 1 }}>
                             LIST
                         </Box>
@@ -223,9 +256,45 @@ const InfoTree = ({ aniRef }) => {
                         DESCRIPTION
                     </Box>
 
-                    <Tree name="images" style={{ ...yellow }}>
+                    <Tree name="technologies" style={{ ...yellow }}>
                         <Box sx={{ p: 1 }}>
                             LIST
+                        </Box>
+                    </Tree>
+
+                    <Tree name="achievements" style={{ ...yellow }}>
+                        <Box sx={{ p: 1 }}>
+                            LIST
+                        </Box>
+                    </Tree>
+
+                    <Tree name="more" style={{ ...yellow }}>
+                        <Box sx={{ p: 1 }}>
+                            LIST
+                        </Box>
+                    </Tree>
+                </Tree>
+
+                <Tree name="other" style={{ ...green }}>
+                    <Tree name="freelance" style={{ ...yellow }}>
+                        <Box sx={{ p: 1 }}>
+                            {generateHistory([{ job: 'DATA ENTRY PROJECT', date: 'JUL 2016 - AUG 2016' }])}
+
+                            Used <strong style={orange}>Electron</strong> to create a proof-of-concept data entry software tailored specifically to the requirements of a physiotherapy business.
+                        </Box>
+                    </Tree>
+
+                    <Tree name="non tech" style={{ ...yellow }}>
+                        <Box sx={{ p: 1 }}>
+                            {generateHistory([{ job: 'FOOD & BEVERAGE ATTENDANT', date: 'JAN 2018 - JUL 2018' }])}
+
+                            <p>A standard hospitality job. I worked as a bartender and covered gaming shifts too.</p>
+
+                            <hr style={{ borderColor: white.color, borderStyle: 'dashed', maxWidth: '75rem', marginLeft: 0, marginBottom: '1rem' }} />
+
+                            {generateHistory([{ job: 'PRIVATE HSC TUTOR', date: '2016 - 2017' }])}
+
+                            Tutored some family friends for HSC.
                         </Box>
                     </Tree>
                 </Tree>
