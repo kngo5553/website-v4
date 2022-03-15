@@ -10,7 +10,7 @@ import { createTheme } from '@mui/material/styles'
 const customTheme = createTheme({
   palette: {
     background: {
-      default: '#0e131f',
+      default: '#0E131F',
       // default: '#1e1e24'
     },
   },
