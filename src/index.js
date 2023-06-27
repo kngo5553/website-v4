@@ -64,9 +64,7 @@ const router = createHashRouter([
     path: "*",
     element: <App />
   }
-], {
-  basename: process.env.PUBLIC_URL
-});
+]);
 
 ReactDOM.render(
   <React.StrictMode>
