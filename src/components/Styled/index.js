@@ -63,8 +63,10 @@ export const CGContainer = styled('div')`
 export const CGConvo = styled('div')`
   flex-grow: 1;
   border-bottom: 1px solid white;
+  overflow: auto;
 `
 
 export const CGMessage = styled('div')`
-  background-color: ${({user}) => user && 'white' };
+  background-color: ${({user}) => user && '#161e31' };
+  padding: 1rem;
 `
