@@ -66,8 +66,6 @@ const ngoArray = [
   },
 ];
 
-const centerDiv = { width: '100%', display: 'flex', justifyContent: 'center' };
-
 const App = () => {
   const [showFooter, setShowFooter] = React.useState(true);
 
@@ -80,51 +78,51 @@ const App = () => {
   useChain([kevinRef, infoRef], [0, 1.3]);
 
   return (
-      <Container maxWidth='2400px' sx={{mb: 5}}>
-        {/* Title animation */}
-        <Box sx={{
-          fontSize: {
-            xl: 200,
-            lg: 170,
-            md: 160,
-            sm: 140,
-            xs: 100
-          },
-          color: '#FFA400', flexWrap: 'wrap', fontWeight: 900, display: 'flex', fontFamily: 'Poppins'
-          /* ...centerDiv */ /* WebkitTextStroke: '2px #F4FFFD' */
-        }}>
-          {/* "Kevin" */}
-          <Box sx={{ display: 'flex-item', mb: -10 }}>
-            <TransitionArray transitionArray={kevinArray} aniRef={kevinRef} />
-          </Box>
-
-          {/* Space separator */}
-          <Box sx={{ color: '#EF476F', display: 'flex-item', mb: { lg: 0, sm: -5, xs: -3 }, mt: { lg: 0, sm: -5, xs: -3 } }}>
-            &nbsp;
-          </Box>
-
-          {/* Middle Initials */}
-          <Box sx={{
-            color: '#EF476F',
-            display: {
-              lg: 'flex-item',
-              xs: 'none'
-            }
-          }}>
-            <TransitionArray transitionArray={thachArray} />&nbsp;
-          </Box>
-
-          {/* <Box sx={{ height: 0, flexBasis: '100%', display: 'flex-item' }} /> */}
-
-          {/* "Ngo" */}
-          <Box sx={{ color: '#008DD5', display: 'flex-item', mb: 0 }}>
-            <TransitionArray transitionArray={ngoArray} />
-          </Box>
+    <Container maxWidth='2400px' sx={{ mb: 5 }}>
+      {/* Title animation */}
+      <Box sx={{
+        fontSize: {
+          xl: 200,
+          lg: 170,
+          md: 160,
+          sm: 140,
+          xs: 100
+        },
+        color: '#FFA400', flexWrap: 'wrap', fontWeight: 900, display: 'flex', fontFamily: 'Poppins'
+        /* ...centerDiv */ /* WebkitTextStroke: '2px #F4FFFD' */
+      }}>
+        {/* "Kevin" */}
+        <Box sx={{ display: 'flex-item', mb: -10 }}>
+          <TransitionArray transitionArray={kevinArray} aniRef={kevinRef} />
         </Box>
 
-        <InfoTree aniRef={infoRef} />
+        {/* Space separator */}
+        <Box sx={{ color: '#EF476F', display: 'flex-item', mb: { lg: 0, sm: -5, xs: -3 }, mt: { lg: 0, sm: -5, xs: -3 } }}>
+          &nbsp;
+        </Box>
 
-        {showFooter &&
+        {/* Middle Initials */}
+        <Box sx={{
+          color: '#EF476F',
+          display: {
+            lg: 'flex-item',
+            xs: 'none'
+          }
+        }}>
+          <TransitionArray transitionArray={thachArray} />&nbsp;
+        </Box>
+
+        {/* <Box sx={{ height: 0, flexBasis: '100%', display: 'flex-item' }} /> */}
+
+        {/* "Ngo" */}
+        <Box sx={{ color: '#008DD5', display: 'flex-item', mb: 0 }}>
+          <TransitionArray transitionArray={ngoArray} />
+        </Box>
+      </Box>
+
+      <InfoTree aniRef={infoRef} />
+
+      {showFooter &&
         <footer style={{ color: "gray", position: "fixed", bottom: 0, right: 0, marginRight: '1rem', marginTop: '5px' }}>
           <Card variant="outlined" sx={{ bgcolor: '#1e1e24', color: '#F4FFFD' }}>
 
@@ -137,15 +135,15 @@ const App = () => {
             <CardContent sx={{ mb: -2, textAlign: 'center' }}>
               <Typography sx={{ fontSize: 13, mb: 2 }} gutterBottom>
                 This website is a work in progress.
-            </Typography>
+              </Typography>
               <Button href="https://kngo5553.github.io/websitev3deploy/" target="_blank" variant="contained" endIcon={<OpenInNewIcon />} sx={{ fontSize: 12, bgcolor: '#EF476F', '&:hover': { bgcolor: '#CF476F' } }}>
                 View old website
-            </Button>
+              </Button>
             </CardContent>
           </Card>
         </footer>
       }
-      </Container>
+    </Container>
   );
 }
 

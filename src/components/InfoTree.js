@@ -11,11 +11,11 @@ import PersonIcon from '@mui/icons-material/Person';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 
 const InfoTree = ({ aniRef }) => {
-    const [tabValue, setTabValue] = React.useState({ snswTech: '1' });
+    // const [tabValue, setTabValue] = React.useState({ snswTech: '1' });
 
-    const handleChange = (key, newValue) => {
-        setTabValue({ ...tabValue, [key]: newValue });
-    };
+    // const handleChange = (key, newValue) => {
+    //     setTabValue({ ...tabValue, [key]: newValue });
+    // };
 
     const { ...styles } = useSpring({
         // ref: springApi,
@@ -32,7 +32,7 @@ const InfoTree = ({ aniRef }) => {
     const red = { color: '#EF476F' };
     const yellow = { color: '#FFFF00' };
     const black = { color: '#0E131F' };
-    const lightBlack = { color: '#1E1E24' };
+    // const lightBlack = { color: '#1E1E24' };
     const green = { color: '#D1F0B1' };
 
     const buttonStyles = { mr: 1, fontWeight: 900, mt: 1, minWidth: 120 };
@@ -131,7 +131,7 @@ const InfoTree = ({ aniRef }) => {
             <Tree name="experience">
                 <Tree name="service nsw" style={{ ...blue }}>
                     <Box sx={{ p: 1 }}>
-                        {generateHistory([{ job: "SOFTWARE ENGINEER", date: "DEC 2020 - PRESENT" }])}
+                        {generateHistory([{ job: "SOFTWARE ENGINEER", date: "DEC 2020 - APR 2022" }])}
 
                         <p>
                             Service NSW is a cutting edge government agency adopting the latest industry trends to deliver an <strong style={{ ...orange }}>amazing and consistent UX to millions of NSW citizens</strong> everyday.

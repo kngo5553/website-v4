@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTransition, animated, config } from '@react-spring/web';
 
 const TransitionArray = ({ transitionArray, aniRef }) => {
+  // eslint-disable-next-line no-unused-vars
   const [items, setItems] = useState(transitionArray);
 
   const transitions = useTransition(items, {

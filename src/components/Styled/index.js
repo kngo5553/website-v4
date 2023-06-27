@@ -50,3 +50,21 @@ export const toggle = {
   cursor: 'pointer',
   verticalAlign: 'middle',
 }
+
+export const CGContainer = styled('div')`
+  border: 3px solid #F4FFFD;
+  height: calc(100vh - 2rem);
+  margin: 1rem;
+  color: #F4FFFD;
+  font-family: 'Roboto Mono';
+  display: flex;
+  flex-direction: column;
+`
+export const CGConvo = styled('div')`
+  flex-grow: 1;
+  border-bottom: 1px solid white;
+`
+
+export const CGMessage = styled('div')`
+  background-color: ${({user}) => user && 'white' };
+`
