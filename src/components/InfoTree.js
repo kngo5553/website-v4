@@ -112,7 +112,7 @@ const InfoTree = ({ aniRef }) => {
                             Linkedin&nbsp;<LinkedInIcon />
                         </Button>
 
-                        <Button sx={{ ...buttonStyles, backgroundColor: '#EF476F' }} href='./kevin_ngo_resume_v2-1.pdf' target="_blank" variant="contained">
+                        <Button sx={{ ...buttonStyles, backgroundColor: '#EF476F' }} href='./kevin_ngo_resume_v3.pdf' target="_blank" variant="contained">
                             Resume&nbsp;<ArticleIcon />
                         </Button>
                     </Box>
