@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://kevinngo.tech/static/css/main.393a2014.css",
-    "main.js": "https://kevinngo.tech/static/js/main.f6f915ae.js",
+    "main.js": "https://kevinngo.tech/static/js/main.7dbac804.js",
     "static/js/787.1301a7f4.chunk.js": "https://kevinngo.tech/static/js/787.1301a7f4.chunk.js",
     "index.html": "https://kevinngo.tech/index.html",
     "main.393a2014.css.map": "https://kevinngo.tech/static/css/main.393a2014.css.map",
-    "main.f6f915ae.js.map": "https://kevinngo.tech/static/js/main.f6f915ae.js.map",
+    "main.7dbac804.js.map": "https://kevinngo.tech/static/js/main.7dbac804.js.map",
     "787.1301a7f4.chunk.js.map": "https://kevinngo.tech/static/js/787.1301a7f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.393a2014.css",
-    "static/js/main.f6f915ae.js"
+    "static/js/main.7dbac804.js"
   ]
 }

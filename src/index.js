@@ -7,7 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/system';
 import { createTheme } from '@mui/material/styles'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import { ChatGPT } from "./components";
@@ -51,7 +51,7 @@ const customTheme = createTheme({
   },
 });
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
