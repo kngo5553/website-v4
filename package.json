@@ -2,7 +2,7 @@
   "name": "websitev4",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/website-v4",
+  "homepage": "https://kngo5553.github.io/website-v4",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
